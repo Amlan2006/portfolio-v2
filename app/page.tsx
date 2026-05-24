@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const socialLinks = [
   { name: "GitHub", href: "https://github.com/Amlan2006", icon: "github" },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/amlan-roy-2006", icon: "linkedin" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/amlanroy2006/", icon: "linkedin" },
   { name: "Medium", href: "https://medium.com/@amlanroy2020", icon: "medium" },
   { name: "Phone", href: "tel:9830619628", icon: "phone" },
 ];
