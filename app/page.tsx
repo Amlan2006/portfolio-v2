@@ -53,12 +53,50 @@ const skills = [
 ];
 
 const chains = [
-  { name: "BNB Chain", symbol: "BNB", focus: "High-throughput EVM apps" },
-  { name: "Polygon", symbol: "POL", focus: "dApps and indexer coverage" },
-  { name: "Ethereum", symbol: "ETH", focus: "Core smart contract systems" },
-  { name: "Base", symbol: "BASE", focus: "Modern L2 deployments" },
-  { name: "Celo", symbol: "CELO", focus: "Hackathon track builds" },
+  {
+    name: "BNB Chain",
+    logo: "https://cdn.simpleicons.org/bnbchain/ff6b2b",
+    focus: "High-throughput EVM apps",
+  },
+  {
+    name: "Polygon",
+    logo: "https://cdn.simpleicons.org/polygon/ff6b2b",
+    focus: "dApps and indexer coverage",
+  },
+  {
+    name: "Ethereum",
+    logo: "https://cdn.simpleicons.org/ethereum/ff6b2b",
+    focus: "Core smart contract systems",
+  },
+  {
+    name: "Base",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQacxje9Z-NILjsDO-nZVu_hUvDKIM48QVRAA&s",
+    focus: "Modern L2 deployments",
+  },
+  {
+    name: "Celo",
+    logo: "https://static.chainbroker.io/mediafiles/projects/celo/celo.jpeg",
+    focus: "Hackathon track builds",
+  },
 ];
+
+const skillLogos: Record<string, string> = {
+  Solidity: "https://cdn.simpleicons.org/solidity/ff6b2b",
+  JavaScript: "https://cdn.simpleicons.org/javascript/ff6b2b",
+  Python: "https://cdn.simpleicons.org/python/ff6b2b",
+  "C++": "https://cdn.simpleicons.org/cplusplus/ff6b2b",
+  SQL: "https://cdn.simpleicons.org/sqlite/ff6b2b",
+  Docker: "https://cdn.simpleicons.org/docker/ff6b2b",
+  Git: "https://cdn.simpleicons.org/git/ff6b2b",
+  Vercel: "https://cdn.simpleicons.org/vercel/ff6b2b",
+  Hardhat: "https://images.seeklogo.com/logo-png/42/1/hardhat-logo-png_seeklogo-426726.png",
+  Foundry: "https://www.getfoundry.sh/foundry-banner.png",
+  Chainlink: "https://cdn.simpleicons.org/chainlink/ff6b2b",
+  "Neon Postgres": "https://cdn.simpleicons.org/neon/ff6b2b",
+  Coolify: "https://cdn.simpleicons.org/coolify/ff6b2b",
+  Quicknode: "https://pbs.twimg.com/profile_images/2006931756109209601/TRgoe6HT.jpg",
+  Ankr: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCUd1P4UDjKZLCu05az8X9ORdbnL7unil2Vg&s",
+};
 
 const posts = [
   {
@@ -185,7 +223,9 @@ function DeveloperIllustration() {
 function SkillIcon({ label }: { label: string }) {
   return (
     <div className="skill-tile">
-      <div className="skill-mark">{label.slice(0, 2).toUpperCase()}</div>
+      <div className="logo-mark">
+        <Image src={skillLogos[label]} alt="" width={40} height={40} unoptimized />
+      </div>
       <span>{label}</span>
     </div>
   );
@@ -327,7 +367,9 @@ export default function Home() {
           <div className="chains-orbit" aria-label="Chains Amlan has worked on">
             {chains.map((chain) => (
               <article className="chain-node" key={chain.name}>
-                <span>{chain.symbol}</span>
+                <div className="logo-mark chain-logo">
+                  <Image src={chain.logo} alt="" width={48} height={48} unoptimized />
+                </div>
                 <div>
                   <h3>{chain.name}</h3>
                   <p>{chain.focus}</p>
